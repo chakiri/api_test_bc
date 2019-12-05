@@ -1,4 +1,4 @@
-Clone project from depot git
+Clone project from depot git : https://github.com/chakiri/api_test_bc.git
 
 Tape command :
     
@@ -16,7 +16,7 @@ Load fixtures with data :
 
     php bin/console doctrine:fixtures:load
     
-Inscription/Authentication :
+Inscription/Authentication/Front :
 
     @yourUrl/inscription
     @yourUrl/login
@@ -25,7 +25,9 @@ Inscription/Authentication :
         pwd : test
     
     @yourUrl/advert
+    @yourUrl/advert/{id}
     @yourUrl/advert/new
+    @yourUrl/advert/edit/{id}
     ...
     
 Api documentation:

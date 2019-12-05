@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Form Advert{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% if editMode %}<h1>Edit Advert</h1>
+        {% else %}<h1>New Advert</h1>
+        {% endif %}
+        {{ form_start(form) }}
+        <div class="col-md-4 form-group">
+            {{ form_row(form.title, {'attr': {'class': 'form-control', 'placeholder': 'title'}}) }}
+        </div>
+        <div class="col-md-4 form-group">
+            {{ form_row(form.content, {'attr': {'class': 'form-control', 'placeholder': 'content'}}) }}
+        </div>
+        <div class="col-md-4 form-group">
+            {{ form_row(form.category, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="attributes">
+            <div class="col-md-4 form-group">
+                <div class="form-error">{{ form_errors(form.attributes) }}</div>
+                {{ form_label(form.attributes) }}  <i>format json</i>
+                {{ form_widget(form.attributes, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

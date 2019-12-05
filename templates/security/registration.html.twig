@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title%}Inscription{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Inscription</h1>
+        <div class="login-form">
+            {{ form_start(form) }}
+            <div class="form-group col-md-4">
+                <div class="form-error">{{ form_errors(form.firstName) }}</div>
+                {{ form_widget(form.firstName, {'attr': {'class': 'form-control', 'placeholder': 'Firstname'}}) }}
+            </div>
+            <div class="form-group col-md-4">
+                <div class="form-error">{{ form_errors(form.lastName) }}</div>
+                {{ form_widget(form.lastName, {'attr': {'class': 'form-control', 'placeholder': 'Lastname'}}) }}
+            </div>
+            <div class="form-group col-md-4">
+                <div class="form-error">{{ form_errors(form.email) }}</div>
+                {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+            </div>
+            <div class="form-group col-md-4">
+                <div class="form-error">{{ form_errors(form.password) }}</div>
+                {{ form_widget(form.password, {'attr': {'class': 'form-control', 'placeholder': 'Password'}}) }}
+            </div>
+            <div class="form-group col-md-4">
+                <div class="form-error">{{ form_errors(form.confirmPassword) }}</div>
+                {{ form_widget(form.confirmPassword, {'attr': {'class': 'form-control', 'placeholder': 'Confirm password'}}) }}
+            </div>
+            <button class="btn btn-primary" type="submit">register</button>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

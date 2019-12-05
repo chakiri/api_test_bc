@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Advert{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ advert.title }}</h1>
+        <p>{{ advert.content }}</p>
+        <p><i>{{ advert.category }}</i></p>
+        Cretaed by {{ advert.user.email }}
+        <p>{{ advert.attributes }}</p>
+
+        <a href="{{ path('advert_edit', {'id': advert.id}) }}"><button type="button" class="btn btn-success">Edit</button></a>
+    </div>
+
+{% endblock %}

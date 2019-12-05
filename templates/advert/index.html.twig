@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adverts{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>List adverts</h1>
+        <a href="{{ path('advert_new') }}"><button type="button" class="btn btn-success">New advert</button></a>
+        {% for advert in adverts%}
+            <h2>{{ advert.title }}</h2>
+            {{ advert.category }} <a href="{{ path('advert_show', {'id': advert.id}) }}">more...</a>
+        {% endfor %}
+    </div>
+{% endblock %}

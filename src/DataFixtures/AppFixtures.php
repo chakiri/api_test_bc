@@ -40,6 +40,8 @@ class AppFixtures extends Fixture
 
         $manager->persist($user);
 
+        $count = 0;
+
         for ($j = 0; $j<3; $j++) {
             $category = new Category();
 
@@ -50,13 +52,14 @@ class AppFixtures extends Fixture
             for ($i = 0; $i < 3; $i++){
                 $advert = new Advert();
 
-                $advert->setTitle("Mon annonce N° " . $i);
-                $advert->setContent("Mon Contenu de l'annonce " . $i);
+                $advert->setTitle("Mon annonce N° " . $count);
+                $advert->setContent("Mon Contenu de l'annonce " . $count);
                 $advert->setCategory($category);
                 $advert->setUser($user);
                 $advert->setAttributes($attributes[$j]);
 
                 $manager->persist($advert);
+                $count++;
             }
         }
 
